@@ -121,22 +121,22 @@ class ExchangeBase(PrintError):
 class BitcoinAverage(ExchangeBase):
 
     def get_rates(self, ccy):
-        json = self.get_json('apiv2.bitcoinaverage.com', '/indices/crypto/ticker/MONABTC')
+        json = self.get_json('apiv2.bitcoinaverage.com', '/indices/crypto/ticker/DNGRBTC')
         return {ccy: self.convert_btc_to_ccy(ccy, Decimal(json['last']))}
 
 class Bittrex(ExchangeBase):
     def get_rates(self, ccy):
-        json = self.get_json('bittrex.com', '/api/v1.1/public/getticker?market=btc-mona')
+        json = self.get_json('bittrex.com', '/api/v1.1/public/getticker?market=btc-dongri')
         return {ccy: self.convert_btc_to_ccy(ccy, Decimal(json['result']['Last']))}
 
 class Bitbank(ExchangeBase):
     def get_rates(self, ccy):
-        json = self.get_json('public.bitbank.cc', '/mona_jpy/ticker')
+        json = self.get_json('public.bitbank.cc', '/dongri_jpy/ticker')
         return {'JPY': Decimal(json['data']['last'])}
 
 class Zaif(ExchangeBase):
     def get_rates(self, ccy):
-        json = self.get_json('api.zaif.jp', '/api/1/last_price/mona_jpy')
+        json = self.get_json('api.zaif.jp', '/api/1/last_price/dongri_jpy')
         return {'JPY': Decimal(json['last_price'])}
 
 

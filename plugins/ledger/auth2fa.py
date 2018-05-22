@@ -13,11 +13,11 @@ from PyQt5.QtWidgets import *
 
 from btchip.btchip import *
 
-from electrum_mona.i18n import _
-from electrum_mona_gui.qt.util import *
-from electrum_mona.util import print_msg
-from electrum_mona import constants, bitcoin
-from electrum_mona_gui.qt.qrcodewidget import QRCodeWidget
+from electrum_dongri.i18n import _
+from electrum_dongri_gui.qt.util import *
+from electrum_dongri.util import print_msg
+from electrum_dongri import constants, bitcoin
+from electrum_dongri_gui.qt.qrcodewidget import QRCodeWidget
 
 
 DEBUG = False

@@ -1,9 +1,9 @@
 from decimal import Decimal
 _ = lambda x:x
 #from i18n import _
-from electrum_mona import WalletStorage, Wallet
-from electrum_mona.util import format_satoshis, set_verbosity
-from electrum_mona.bitcoin import is_address, COIN, TYPE_ADDRESS
+from electrum_dongri import WalletStorage, Wallet
+from electrum_dongri.util import format_satoshis, set_verbosity
+from electrum_dongri.bitcoin import is_address, COIN, TYPE_ADDRESS
 import getpass, datetime
 
 # minimal fdisk like gui for console usage
@@ -16,7 +16,7 @@ class ElectrumGui:
         self.network = daemon.network
         storage = WalletStorage(config.get_wallet_path())
         if not storage.file_exists:
-            print("Wallet not found. try 'electrum-mona create'")
+            print("Wallet not found. try 'electrum-dongri create'")
             exit()
         if storage.is_encrypted():
             password = getpass.getpass('Password:', stream=None)

@@ -14,7 +14,7 @@ else:
 PYTHON_VERSION = '3.5.4'
 PYHOME = 'c:/python' + PYTHON_VERSION
 
-home = 'C:\\electrum-mona\\'
+home = 'C:\\electrum-dongri\\'
 
 if os.path.exists("C:/Program Files (x86)"):
     zbardir = 'C:\\Program Files (x86)\\'
@@ -35,14 +35,14 @@ binaries = [(PYHOME+"/libusb-1.0.dll", ".")]
 binaries += [b for b in collect_dynamic_libs('PyQt5') if 'qwindowsvista' in b[0]]
 
 datas = [
-    (home+'lib/currencies.json', 'electrum_mona'),
-    (home+'lib/servers.json', 'electrum_mona'),
-    (home+'lib/checkpoints.json', 'electrum_mona'),
-    (home+'lib/servers_testnet.json', 'electrum_mona'),
-    (home+'lib/checkpoints_testnet.json', 'electrum_mona'),
-    (home+'lib/wordlist/english.txt', 'electrum_mona/wordlist'),
-    (home+'lib/locale', 'electrum_mona/locale'),
-    (home+'plugins', 'electrum_mona_plugins'),
+    (home+'lib/currencies.json', 'electrum_dongri'),
+    (home+'lib/servers.json', 'electrum_dongri'),
+    (home+'lib/checkpoints.json', 'electrum_dongri'),
+    (home+'lib/servers_testnet.json', 'electrum_dongri'),
+    (home+'lib/checkpoints_testnet.json', 'electrum_dongri'),
+    (home+'lib/wordlist/english.txt', 'electrum_dongri/wordlist'),
+    (home+'lib/locale', 'electrum_dongri/locale'),
+    (home+'plugins', 'electrum_dongri_plugins'),
     (zbardir+'ZBar\\bin\\', '.')
 ]
 datas += collect_data_files('trezorlib')
@@ -50,7 +50,7 @@ datas += collect_data_files('btchip')
 datas += collect_data_files('keepkeylib')
 
 # We don't put these files in to actually include them in the script but to make the Analysis method scan them for imports
-a = Analysis([home+'electrum-mona',
+a = Analysis([home+'electrum-dongri',
               home+'gui/qt/main_window.py',
               home+'gui/text.py',
               home+'lib/util.py',
@@ -95,7 +95,7 @@ exe_standalone = EXE(
     a.scripts,
     a.binaries,
     a.datas, 
-    name=os.path.join('build\\pyi.win32\\electrum-mona', cmdline_name + ".exe"),
+    name=os.path.join('build\\pyi.win32\\electrum-dongri', cmdline_name + ".exe"),
     debug=False,
     strip=None,
     upx=False,
@@ -108,7 +108,7 @@ exe_portable = EXE(
     a.scripts,
     a.binaries,
     a.datas + [ ('is_portable', 'README.md', 'DATA' ) ],
-    name=os.path.join('build\\pyi.win32\\electrum-mona', cmdline_name + "-portable.exe"),
+    name=os.path.join('build\\pyi.win32\\electrum-dongri', cmdline_name + "-portable.exe"),
     debug=False,
     strip=None,
     upx=False,
@@ -139,4 +139,4 @@ coll = COLLECT(
     debug=False,
     icon=home+'icons/electrum.ico',
     console=False,
-    name=os.path.join('dist', 'electrum-mona'))
+    name=os.path.join('dist', 'electrum-dongri'))

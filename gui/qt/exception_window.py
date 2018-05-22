@@ -35,8 +35,8 @@ import PyQt5.QtCore as QtCore
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
 
-from electrum_mona.i18n import _
-from electrum_mona import ELECTRUM_VERSION, bitcoin, constants
+from electrum_dongri.i18n import _
+from electrum_dongri import ELECTRUM_VERSION, bitcoin, constants
 
 from .util import MessageBoxMixin
 
@@ -53,7 +53,7 @@ issue_template = """<h2>Traceback</h2>
   <li>Locale: {locale}</li>
 </ul>
 """
-report_server = "https://crashhub.electrum-mona.org/crash"
+report_server = "https://crashhub.electrum-dongri.org/crash"
 
 
 class Exception_Window(QWidget, MessageBoxMixin):
@@ -111,8 +111,8 @@ class Exception_Window(QWidget, MessageBoxMixin):
         self.show()
 
     def send_report(self):
-        # if constants.net.GENESIS[-4:] not in ["e0b2", "8bb6"] and ".electrum-mona.org" in report_server:
-        # electrum-mona's crashhub is not found :\
+        # if constants.net.GENESIS[-4:] not in ["e0b2", "8bb6"] and ".electrum-dongri.org" in report_server:
+        # electrum-dongri's crashhub is not found :\
         if constants.net.GENESIS[-4:] not in ["4943", "e26f"] and ".electrum.org" in report_server:
             # Gah! Some kind of altcoin wants to send us crash reports.
             self.main_window.show_critical(_("Please report this issue manually."))

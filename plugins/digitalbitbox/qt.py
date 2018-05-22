@@ -3,9 +3,9 @@ from functools import partial
 from ..hw_wallet.qt import QtHandlerBase, QtPluginBase
 from .digitalbitbox import DigitalBitboxPlugin
 
-from electrum_mona.i18n import _
-from electrum_mona.plugins import hook
-from electrum_mona.wallet import Standard_Wallet
+from electrum_dongri.i18n import _
+from electrum_dongri.plugins import hook
+from electrum_dongri.wallet import Standard_Wallet
 
 class Plugin(DigitalBitboxPlugin, QtPluginBase):
     icon_unpaired = ":icons/digitalbitbox_unpaired.png"

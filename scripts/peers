@@ -2,8 +2,8 @@
 
 import util
 
-from electrum_mona.network import filter_protocol
-from electrum_mona.blockchain import hash_header
+from electrum_dongri.network import filter_protocol
+from electrum_dongri.blockchain import hash_header
 
 peers = util.get_peers()
 peers = filter_protocol(peers, 's')

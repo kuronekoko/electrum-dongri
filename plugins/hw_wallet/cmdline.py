@@ -1,4 +1,4 @@
-from electrum_mona.util import print_msg, print_error, raw_input
+from electrum_dongri.util import print_msg, print_error, raw_input
 
 
 class CmdLineHandler:

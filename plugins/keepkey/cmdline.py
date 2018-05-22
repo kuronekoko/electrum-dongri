@@ -1,4 +1,4 @@
-from electrum_mona.plugins import hook
+from electrum_dongri.plugins import hook
 from .keepkey import KeepKeyPlugin
 from ..hw_wallet import CmdLineHandler
 

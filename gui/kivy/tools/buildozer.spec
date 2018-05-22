@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Electrum-MONA
+title = Electrum-DNGR
 
 # (str) Package name
-package.name = Electrum_MONA
+package.name = Electrum_DNGR
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.electrum_mona
+package.domain = org.electrum_dongri
 
 # (str) Source code where the main.py live
 source.dir = .

@@ -1,11 +1,11 @@
 import select, time, queue
-# import electrum_mona
-from electrum_mona import Connection, Interface, SimpleConfig
+# import electrum_dongri
+from electrum_dongri import Connection, Interface, SimpleConfig
 
-from electrum_mona.network import parse_servers
+from electrum_dongri.network import parse_servers
 from collections import defaultdict
 
-# electrum_mona.util.set_verbosity(1)
+# electrum_dongri.util.set_verbosity(1)
 def get_interfaces(servers, timeout=10):
     '''Returns a map of servers to connected interfaces.  If any
     connections fail or timeout, they will be missing from the map.

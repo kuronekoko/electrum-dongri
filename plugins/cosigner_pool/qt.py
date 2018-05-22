@@ -30,14 +30,14 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QPushButton
 
-from electrum_mona import bitcoin, util, keystore
-from electrum_mona import transaction
-from electrum_mona.plugins import BasePlugin, hook
-from electrum_mona.i18n import _
-from electrum_mona.wallet import Multisig_Wallet
-from electrum_mona.util import bh2u, bfh
+from electrum_dongri import bitcoin, util, keystore
+from electrum_dongri import transaction
+from electrum_dongri.plugins import BasePlugin, hook
+from electrum_dongri.i18n import _
+from electrum_dongri.wallet import Multisig_Wallet
+from electrum_dongri.util import bh2u, bfh
 
-from electrum_mona_gui.qt.transaction_dialog import show_transaction
+from electrum_dongri_gui.qt.transaction_dialog import show_transaction
 
 import sys
 import traceback
@@ -160,7 +160,7 @@ class Plugin(BasePlugin):
             d.cosigner_send_button.hide()
 
     def cosigner_can_sign(self, tx, cosigner_xpub):
-        from electrum_mona.keystore import is_xpubkey, parse_xpubkey
+        from electrum_dongri.keystore import is_xpubkey, parse_xpubkey
         xpub_set = set([])
         for txin in tx.inputs():
             for x_pubkey in txin['x_pubkeys']:

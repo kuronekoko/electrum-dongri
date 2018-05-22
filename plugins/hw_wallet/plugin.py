@@ -24,9 +24,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from electrum_mona.plugins import BasePlugin, hook
-from electrum_mona.i18n import _
-from electrum_mona.bitcoin import is_address
+from electrum_dongri.plugins import BasePlugin, hook
+from electrum_dongri.i18n import _
+from electrum_dongri.bitcoin import is_address
 
 
 class HW_PluginBase(BasePlugin):

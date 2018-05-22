@@ -1,0 +1,21 @@
+# If you want Electrum to appear in a Linux app launcher ("start menu"), install this by doing:
+# sudo desktop-file-install electrum-dongris.desktop
+
+[Desktop Entry]
+Comment=Lightweight Dongri Client
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\" electrum-dongri %u"
+GenericName[en_US]=Dongri Wallet
+GenericName=Dongri Wallet
+Icon=electrum-dongri
+Name[en_US]=Electrum-dongri Dongri Wallet
+Name=Electrum Dongri Wallet
+Categories=Finance;Network;
+StartupNotify=false
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/dongri;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\" electrum-dongri --testnet %u"
+Name=Testnet mode

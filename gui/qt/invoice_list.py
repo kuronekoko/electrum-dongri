@@ -23,8 +23,8 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from electrum_mona.i18n import _
-from electrum_mona.util import format_time
+from electrum_dongri.i18n import _
+from electrum_dongri.util import format_time
 
 from .util import *
 

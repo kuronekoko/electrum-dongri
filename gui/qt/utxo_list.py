@@ -24,7 +24,7 @@
 # SOFTWARE.
 
 from .util import *
-from electrum_mona.i18n import _
+from electrum_dongri.i18n import _
 
 
 class UTXOList(MyTreeWidget):

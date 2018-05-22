@@ -31,14 +31,14 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from electrum_mona.bitcoin import base_encode
-from electrum_mona.i18n import _
-from electrum_mona.plugins import run_hook
-from electrum_mona import simple_config
+from electrum_dongri.bitcoin import base_encode
+from electrum_dongri.i18n import _
+from electrum_dongri.plugins import run_hook
+from electrum_dongri import simple_config
 
-from electrum_mona.util import bfh
-from electrum_mona.wallet import AddTransactionException
-from electrum_mona.transaction import SerializationError
+from electrum_dongri.util import bfh
+from electrum_dongri.wallet import AddTransactionException
+from electrum_dongri.transaction import SerializationError
 
 from .util import *
 

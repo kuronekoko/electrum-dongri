@@ -4,17 +4,17 @@
 #
 
 try:
-    import electrum_mona
-    from electrum_mona.bitcoin import TYPE_ADDRESS, push_script, var_int, msg_magic, Hash, verify_message, pubkey_from_signature, point_to_ser, public_key_to_p2pkh, EncodeAES, DecodeAES, MyVerifyingKey, is_address
-    from electrum_mona.bitcoin import serialize_xpub, deserialize_xpub
-    from electrum_mona.wallet import Standard_Wallet
-    from electrum_mona import constants
-    from electrum_mona.transaction import Transaction
-    from electrum_mona.i18n import _
-    from electrum_mona.keystore import Hardware_KeyStore
+    import electrum_dongri
+    from electrum_dongri.bitcoin import TYPE_ADDRESS, push_script, var_int, msg_magic, Hash, verify_message, pubkey_from_signature, point_to_ser, public_key_to_p2pkh, EncodeAES, DecodeAES, MyVerifyingKey, is_address
+    from electrum_dongri.bitcoin import serialize_xpub, deserialize_xpub
+    from electrum_dongri.wallet import Standard_Wallet
+    from electrum_dongri import constants
+    from electrum_dongri.transaction import Transaction
+    from electrum_dongri.i18n import _
+    from electrum_dongri.keystore import Hardware_KeyStore
     from ..hw_wallet import HW_PluginBase
-    from electrum_mona.util import print_error, to_string, UserCancelled
-    from electrum_mona.base_wizard import ScriptTypeNotSupported, HWD_SETUP_NEW_WALLET
+    from electrum_dongri.util import print_error, to_string, UserCancelled
+    from electrum_dongri.base_wizard import ScriptTypeNotSupported, HWD_SETUP_NEW_WALLET
 
     import time
     import hid
@@ -290,7 +290,7 @@ class DigitalBitbox_Client():
 
     def dbb_generate_wallet(self):
         key = self.stretch_key(self.password)
-        filename = ("Electrum-mona-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".pdf")
+        filename = ("Electrum-dongri-" + time.strftime("%Y-%m-%d-%H-%M-%S") + ".pdf")
         msg = ('{"seed":{"source": "create", "key": "%s", "filename": "%s", "entropy": "%s"}}' % (key, filename, 'Digital Bitbox Electrum Plugin')).encode('utf8')
         reply = self.hid_send_encrypt(msg)
         if 'error' in reply:

@@ -38,16 +38,16 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 import PyQt5.QtCore as QtCore
 
-from electrum_mona.i18n import _, set_language
-from electrum_mona.plugins import run_hook
-from electrum_mona import WalletStorage
-from electrum_mona.base_wizard import GoBack
-# from electrum_mona.synchronizer import Synchronizer
-# from electrum_mona.verifier import SPV
-# from electrum_mona.util import DebugMem
-from electrum_mona.util import (UserCancelled, print_error,
+from electrum_dongri.i18n import _, set_language
+from electrum_dongri.plugins import run_hook
+from electrum_dongri import WalletStorage
+from electrum_dongri.base_wizard import GoBack
+# from electrum_dongri.synchronizer import Synchronizer
+# from electrum_dongri.verifier import SPV
+# from electrum_dongri.util import DebugMem
+from electrum_dongri.util import (UserCancelled, print_error,
                            WalletFileException, BitcoinException)
-# from electrum_mona.wallet import Abstract_Wallet
+# from electrum_dongri.wallet import Abstract_Wallet
 
 from .installwizard import InstallWizard
 
@@ -98,7 +98,7 @@ class ElectrumGui:
         if hasattr(QtCore.Qt, "AA_ShareOpenGLContexts"):
             QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
         if hasattr(QGuiApplication, 'setDesktopFileName'):
-            QGuiApplication.setDesktopFileName('electrum-mona.desktop')
+            QGuiApplication.setDesktopFileName('electrum-dongri.desktop')
         self.config = config
         self.daemon = daemon
         self.plugins = plugins

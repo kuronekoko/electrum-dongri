@@ -36,41 +36,41 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['electrum-mona.desktop']),
+        (os.path.join(usr_share, 'applications/'), ['electrum-dongri.desktop']),
         (os.path.join(usr_share, icons_dirname), ['icons/electrum.png'])
     ]
 
 setup(
-    name="Electrum-MONA",
+    name="Electrum-DNGR",
     version=version.ELECTRUM_VERSION,
     install_requires=requirements,
     extras_require={
         'full': requirements_hw + ['pycryptodomex'],
     },
     packages=[
-        'electrum_mona',
-        'electrum_mona_gui',
-        'electrum_mona_gui.qt',
-        'electrum_mona_plugins',
-        'electrum_mona_plugins.audio_modem',
-        'electrum_mona_plugins.cosigner_pool',
-        'electrum_mona_plugins.email_requests',
-        'electrum_mona_plugins.greenaddress_instant',
-        'electrum_mona_plugins.hw_wallet',
-        'electrum_mona_plugins.keepkey',
-        'electrum_mona_plugins.labels',
-        'electrum_mona_plugins.ledger',
-        'electrum_mona_plugins.trezor',
-        'electrum_mona_plugins.digitalbitbox',
-        'electrum_mona_plugins.virtualkeyboard',
+        'electrum_dongri',
+        'electrum_dongri_gui',
+        'electrum_dongri_gui.qt',
+        'electrum_dongri_plugins',
+        'electrum_dongri_plugins.audio_modem',
+        'electrum_dongri_plugins.cosigner_pool',
+        'electrum_dongri_plugins.email_requests',
+        'electrum_dongri_plugins.greenaddress_instant',
+        'electrum_dongri_plugins.hw_wallet',
+        'electrum_dongri_plugins.keepkey',
+        'electrum_dongri_plugins.labels',
+        'electrum_dongri_plugins.ledger',
+        'electrum_dongri_plugins.trezor',
+        'electrum_dongri_plugins.digitalbitbox',
+        'electrum_dongri_plugins.virtualkeyboard',
     ],
     package_dir={
-        'electrum_mona': 'lib',
-        'electrum_mona_gui': 'gui',
-        'electrum_mona_plugins': 'plugins',
+        'electrum_dongri': 'lib',
+        'electrum_dongri_gui': 'gui',
+        'electrum_dongri_plugins': 'plugins',
     },
     package_data={
-        'electrum_mona': [
+        'electrum_dongri': [
             'servers.json',
             'servers_testnet.json',
             'servers_regtest.json',
@@ -83,12 +83,12 @@ setup(
             'target*.*',
         ]
     },
-    scripts=['electrum-mona'],
+    scripts=['electrum-dongri'],
     data_files=data_files,
-    description="Lightweight Monacoin Wallet",
+    description="Lightweight Dongri Wallet",
     author="Thomas Voegtlin",
     author_email="thomasv@electrum.org",
     license="MIT Licence",
-    url="https://github.com/wakiyamap/electrum-mona",
-    long_description="""Lightweight Monacoin Wallet"""
+    url="https://github.com/wakiyamap/electrum-dongri",
+    long_description="""Lightweight Dongri Wallet"""
 )

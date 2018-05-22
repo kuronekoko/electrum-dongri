@@ -7,7 +7,7 @@ tmp/
 *.egg/
 /electrum.py
 contrib/pyinstaller/
-Electrum_MONA.egg-info/
+Electrum_DNGR.egg-info/
 gui/qt/icons_rc.py
 locale/
 .devlocaltmp/
@@ -23,3 +23,8 @@ lib/.pytest_cache
 # tox files
 .cache/
 .coverage
+
+.project
+.cproject
+*.dylib
+

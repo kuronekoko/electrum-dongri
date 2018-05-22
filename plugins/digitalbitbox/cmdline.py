@@ -1,4 +1,4 @@
-from electrum_mona.plugins import hook
+from electrum_dongri.plugins import hook
 from .digitalbitbox import DigitalBitboxPlugin
 from ..hw_wallet import CmdLineHandler
 

@@ -5,9 +5,9 @@ from PyInstaller.utils.hooks import collect_data_files, collect_submodules, coll
 import sys
 import os
 
-PACKAGE='Electrum-mona'
-PYPKG='electrum_mona'
-MAIN_SCRIPT='electrum-mona'
+PACKAGE='Electrum-dongri'
+PYPKG='electrum_dongri'
+MAIN_SCRIPT='electrum-dongri'
 ICONS_FILE='electrum.icns'
 
 for i, x in enumerate(sys.argv):

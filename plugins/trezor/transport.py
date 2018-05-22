@@ -1,4 +1,4 @@
-from electrum_mona.util import PrintError
+from electrum_dongri.util import PrintError
 
 
 class TrezorTransport(PrintError):

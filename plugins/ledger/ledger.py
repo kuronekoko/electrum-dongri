@@ -3,16 +3,16 @@ import hashlib
 import sys
 import traceback
 
-from electrum_mona import bitcoin
-from electrum_mona.bitcoin import TYPE_ADDRESS, int_to_hex, var_int
-from electrum_mona.i18n import _
-from electrum_mona.plugins import BasePlugin
-from electrum_mona.keystore import Hardware_KeyStore
-from electrum_mona.transaction import Transaction
-from electrum_mona.wallet import Standard_Wallet
+from electrum_dongri import bitcoin
+from electrum_dongri.bitcoin import TYPE_ADDRESS, int_to_hex, var_int
+from electrum_dongri.i18n import _
+from electrum_dongri.plugins import BasePlugin
+from electrum_dongri.keystore import Hardware_KeyStore
+from electrum_dongri.transaction import Transaction
+from electrum_dongri.wallet import Standard_Wallet
 from ..hw_wallet import HW_PluginBase
-from electrum_mona.util import print_error, is_verbose, bfh, bh2u, versiontuple
-from electrum_mona.base_wizard import ScriptTypeNotSupported
+from electrum_dongri.util import print_error, is_verbose, bfh, bh2u, versiontuple
+from electrum_dongri.base_wizard import ScriptTypeNotSupported
 
 try:
     import hid

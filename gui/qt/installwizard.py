@@ -8,10 +8,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from electrum_mona import Wallet, WalletStorage
-from electrum_mona.util import UserCancelled, InvalidPassword
-from electrum_mona.base_wizard import BaseWizard, HWD_SETUP_DECRYPT_WALLET, GoBack
-from electrum_mona.i18n import _
+from electrum_dongri import Wallet, WalletStorage
+from electrum_dongri.util import UserCancelled, InvalidPassword
+from electrum_dongri.base_wizard import BaseWizard, HWD_SETUP_DECRYPT_WALLET, GoBack
+from electrum_dongri.i18n import _
 
 from .seed_dialog import SeedLayout, KeysLayout
 from .network_dialog import NetworkChoiceLayout
@@ -94,7 +94,7 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
     def __init__(self, config, app, plugins, storage):
         BaseWizard.__init__(self, config, storage)
         QDialog.__init__(self, None)
-        self.setWindowTitle('Electrum-mona  -  ' + _('Install Wizard'))
+        self.setWindowTitle('Electrum-dongri  -  ' + _('Install Wizard'))
         self.app = app
         self.config = config
         # Set for base base class
@@ -166,7 +166,7 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
         hbox2.addWidget(self.pw_e)
         hbox2.addStretch()
         vbox.addLayout(hbox2)
-        self.set_layout(vbox, title=_('Electrum-mona wallet'))
+        self.set_layout(vbox, title=_('Electrum-dongri wallet'))
 
         wallet_folder = os.path.dirname(self.storage.path)
 

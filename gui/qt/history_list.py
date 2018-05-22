@@ -26,13 +26,13 @@
 import webbrowser
 import datetime
 
-from electrum_mona.wallet import AddTransactionException, TX_HEIGHT_LOCAL
+from electrum_dongri.wallet import AddTransactionException, TX_HEIGHT_LOCAL
 from .util import *
-from electrum_mona.i18n import _
-from electrum_mona.util import block_explorer_URL, profiler
+from electrum_dongri.i18n import _
+from electrum_dongri.util import block_explorer_URL, profiler
 
 try:
-    from electrum_mona.plot import plot_history, NothingToPlotException
+    from electrum_dongri.plot import plot_history, NothingToPlotException
 except:
     plot_history = None
 
@@ -344,7 +344,7 @@ class HistoryList(MyTreeWidget, AcceptFileDragDrop):
             menu.addAction(_("Edit {}").format(self.headerItem().text(c)),
                            lambda bound_c=c: self.editItem(item, bound_c))
         menu.addAction(_("Details"), lambda: self.parent.show_transaction(tx))
-        #monacoin param
+        #dongri param
         #if is_unconfirmed and tx:
         #    # note: the current implementation of RBF *needs* the old tx fee
         #    rbf = is_mine and not tx.is_final() and fee is not None
@@ -389,7 +389,7 @@ class HistoryList(MyTreeWidget, AcceptFileDragDrop):
         d = WindowModalDialog(self, _('Export History'))
         d.setMinimumSize(400, 200)
         vbox = QVBoxLayout(d)
-        defaultname = os.path.expanduser('~/electrum-mona-history.csv')
+        defaultname = os.path.expanduser('~/electrum-dongri-history.csv')
         select_msg = _('Select file to export your wallet transactions to')
         hbox, filename_e, csv_button = filename_field(self, self.config, defaultname, select_msg)
         vbox.addLayout(hbox)
@@ -427,5 +427,5 @@ class HistoryList(MyTreeWidget, AcceptFileDragDrop):
                 for line in lines:
                     transaction.writerow(line)
             else:
-                from electrum_mona.util import json_encode
+                from electrum_dongri.util import json_encode
                 f.write(json_encode(history))

@@ -138,8 +138,8 @@ class TestTransaction(unittest.TestCase):
         estimated_output_size = transaction.Transaction.estimated_output_size
         self.assertEqual(estimated_output_size('MFMy9FwJsV6HiN5eZDqDETw4pw52q3UGrb'), 34)
         self.assertEqual(estimated_output_size('PHjTKtgYLTJ9D2Bzw2f6xBB41KBm2HeGfg'), 32)
-        self.assertEqual(estimated_output_size('mona1quunc907zfyj7cyxhnp9584rj0wmdka2ec9w3af'), 31)
-        self.assertEqual(estimated_output_size('mona1qp8f842ywwr9h5rdxyzggex7q3trvvvaarfssxccju52rj6htfzfsqr79j2'), 43)
+        self.assertEqual(estimated_output_size('dongri1quunc907zfyj7cyxhnp9584rj0wmdka2ec9w3af'), 31)
+        self.assertEqual(estimated_output_size('dongri1qp8f842ywwr9h5rdxyzggex7q3trvvvaarfssxccju52rj6htfzfsqr79j2'), 43)
 
     # TODO other tests for segwit tx
     def test_tx_signed_segwit(self):
@@ -173,10 +173,10 @@ class TestTransaction(unittest.TestCase):
 
         # bech32 native segwit
         # test vectors from BIP-0173
-        self.assertEqual((ADDR, 'mona1qw508d6qejxtdg4y5r3zarvary0c5xw7kg5lnx5'), addr_from_script('0014751e76e8199196d454941c45d1b3a323f1433bd6'))
-        self.assertEqual((ADDR, 'mona1pw508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7k9xvmwr'), addr_from_script('5128751e76e8199196d454941c45d1b3a323f1433bd6751e76e8199196d454941c45d1b3a323f1433bd6'))
-        self.assertEqual((ADDR, 'mona1sw50qpvnxy8'), addr_from_script('6002751e'))
-        self.assertEqual((ADDR, 'mona1zw508d6qejxtdg4y5r3zarvaryvhm3vz7'), addr_from_script('5210751e76e8199196d454941c45d1b3a323'))
+        self.assertEqual((ADDR, 'dongri1qw508d6qejxtdg4y5r3zarvary0c5xw7kg5lnx5'), addr_from_script('0014751e76e8199196d454941c45d1b3a323f1433bd6'))
+        self.assertEqual((ADDR, 'dongri1pw508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7k9xvmwr'), addr_from_script('5128751e76e8199196d454941c45d1b3a323f1433bd6751e76e8199196d454941c45d1b3a323f1433bd6'))
+        self.assertEqual((ADDR, 'dongri1sw50qpvnxy8'), addr_from_script('6002751e'))
+        self.assertEqual((ADDR, 'dongri1zw508d6qejxtdg4y5r3zarvaryvhm3vz7'), addr_from_script('5210751e76e8199196d454941c45d1b3a323'))
 
         # base58 p2pkh
         self.assertEqual((ADDR, 'MBamfEqEFDy5dsLWwu48BCizM1zpCoKw3U'), addr_from_script('76a91428662c67561b95c79d2257d2a93d9d151c977e9188ac'))

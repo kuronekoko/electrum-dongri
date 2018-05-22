@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME_ROOT=electrum-mona
+NAME_ROOT=electrum-dongri
 PYTHON_VERSION=3.5.4
 
 # These settings probably don't need any change
@@ -19,13 +19,13 @@ set -e
 mkdir -p tmp
 cd tmp
 
-if [ -d ./electrum-mona ]; then
-  rm ./electrum-mona -rf
+if [ -d ./electrum-dongri ]; then
+  rm ./electrum-dongri -rf
 fi
 
-git clone https://github.com/wakiyamap/electrum-mona -b master
+git clone https://github.com/wakiyamap/electrum-dongri -b master
 
-pushd electrum-mona
+pushd electrum-dongri
 if [ ! -z "$1" ]; then
     git checkout $1
 fi
@@ -47,15 +47,15 @@ echo "Last commit: $VERSION"
 find -exec touch -d '2000-11-11T11:11:11+00:00' {} +
 popd
 
-rm -rf $WINEPREFIX/drive_c/electrum-mona
-cp -r electrum-mona $WINEPREFIX/drive_c/electrum-mona
-cp electrum-mona/LICENCE .
-cp -r ./electrum-mona/contrib/deterministic-build/electrum-locale/locale $WINEPREFIX/drive_c/electrum-mona/lib/
-cp ./electrum-mona/contrib/deterministic-build/electrum-icons/icons_rc.py $WINEPREFIX/drive_c/electrum-mona/gui/qt/
+rm -rf $WINEPREFIX/drive_c/electrum-dongri
+cp -r electrum-dongri $WINEPREFIX/drive_c/electrum-dongri
+cp electrum-dongri/LICENCE .
+cp -r ./electrum-dongri/contrib/deterministic-build/electrum-locale/locale $WINEPREFIX/drive_c/electrum-dongri/lib/
+cp ./electrum-dongri/contrib/deterministic-build/electrum-icons/icons_rc.py $WINEPREFIX/drive_c/electrum-dongri/gui/qt/
 
 # build japanese version
-cp ../default-ja.patch $WINEPREFIX/drive_c/electrum-mona/gui/qt
-pushd $WINEPREFIX/drive_c/electrum-mona/gui/qt
+cp ../default-ja.patch $WINEPREFIX/drive_c/electrum-dongri/gui/qt
+pushd $WINEPREFIX/drive_c/electrum-dongri/gui/qt
 patch < default-ja.patch
 popd
 
@@ -64,7 +64,7 @@ $PYTHON -m pip install -r ../../deterministic-build/requirements.txt
 
 $PYTHON -m pip install -r ../../deterministic-build/requirements-hw.txt
 
-pushd $WINEPREFIX/drive_c/electrum-mona
+pushd $WINEPREFIX/drive_c/electrum-dongri
 $PYTHON setup.py install
 popd
 
@@ -89,7 +89,7 @@ else
 fi
 
 cd dist
-mv electrum-mona-setup.exe $NAME_ROOT-$VERSION-setup.exe
+mv electrum-dongri-setup.exe $NAME_ROOT-$VERSION-setup.exe
 cd ..
 
 echo "Done."

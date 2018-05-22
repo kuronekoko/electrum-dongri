@@ -6,11 +6,11 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import (QHBoxLayout, QLabel, QVBoxLayout)
 
-from electrum_mona.plugins import hook
-from electrum_mona.i18n import _
-from electrum_mona_gui.qt import EnterButton
-from electrum_mona_gui.qt.util import ThreadedButton, Buttons
-from electrum_mona_gui.qt.util import WindowModalDialog, OkButton
+from electrum_dongri.plugins import hook
+from electrum_dongri.i18n import _
+from electrum_dongri_gui.qt import EnterButton
+from electrum_dongri_gui.qt.util import ThreadedButton, Buttons
+from electrum_dongri_gui.qt.util import WindowModalDialog, OkButton
 
 from .labels import LabelsPlugin
 

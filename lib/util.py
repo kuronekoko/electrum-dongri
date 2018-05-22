@@ -41,13 +41,13 @@ def inv_dict(d):
     return {v: k for k, v in d.items()}
 
 
-base_units = {'MONA':8, 'mMONA':5, 'bits':2, 'sat':0}
+base_units = {'DNGR':8, 'mDNGR':5, 'bits':2, 'sat':0}
 base_units_inverse = inv_dict(base_units)
-base_units_list = ['MONA', 'mMona', 'bits', 'sat']  # list(dict) does not guarantee order
+base_units_list = ['DNGR', 'mDngr', 'bits', 'sat']  # list(dict) does not guarantee order
 
 
 def decimal_point_to_base_unit_name(dp: int) -> str:
-    # e.g. 8 -> "MONA"
+    # e.g. 8 -> "DNGR"
     try:
         return base_units_inverse[dp]
     except KeyError:
@@ -55,7 +55,7 @@ def decimal_point_to_base_unit_name(dp: int) -> str:
 
 
 def base_unit_name_to_decimal_point(unit_name: str) -> int:
-    # e.g. "MONA" -> 8
+    # e.g. "DNGR" -> 8
     try:
         return base_units[unit_name]
     except KeyError:
@@ -126,7 +126,7 @@ class Satoshis(object):
         return 'Satoshis(%d)'%self.value
 
     def __str__(self):
-        return format_satoshis(self.value) + " MONA"
+        return format_satoshis(self.value) + " DNGR"
 
 class Fiat(object):
     def __new__(cls, value, ccy):
@@ -325,7 +325,7 @@ def android_data_dir():
     return PythonActivity.mActivity.getFilesDir().getPath() + '/data'
 
 def android_headers_dir():
-    d = android_ext_dir() + '/org.electrum_mona.electrum_mona'
+    d = android_ext_dir() + '/org.electrum_dongri.electrum_dongri'
     if not os.path.exists(d):
         os.mkdir(d)
     return d
@@ -334,7 +334,7 @@ def android_check_data_dir():
     """ if needed, move old directory to sandbox """
     ext_dir = android_ext_dir()
     data_dir = android_data_dir()
-    old_electrum_dir = ext_dir + '/electrum_mona'
+    old_electrum_dir = ext_dir + '/electrum_dongri'
     if not os.path.exists(data_dir) and os.path.exists(old_electrum_dir):
         import shutil
         new_headers_path = android_headers_dir() + '/blockchain_headers'
@@ -436,11 +436,11 @@ def user_dir():
     if 'ANDROID_DATA' in os.environ:
         return android_check_data_dir()
     elif os.name == 'posix':
-        return os.path.join(os.environ["HOME"], ".electrum-mona")
+        return os.path.join(os.environ["HOME"], ".electrum-dongri")
     elif "APPDATA" in os.environ:
-        return os.path.join(os.environ["APPDATA"], "Electrum-MONA")
+        return os.path.join(os.environ["APPDATA"], "Electrum-DNGR")
     elif "LOCALAPPDATA" in os.environ:
-        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-MONA")
+        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-DNGR")
     else:
         #raise Exception("No home directory found in environment variables.")
         return
@@ -553,16 +553,16 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'bchain.info': ('https://bchain.info/MONA/',
+    'bchain.info': ('https://bchain.info/DNGR/',
                         {'tx': 'tx/', 'addr': 'addr/'}),
-    'insight.monaco-ex.org': ('https://mona.insight.monaco-ex.org/insight/',
+    'insight.dongrico-ex.org': ('https://dongri.insight.dongrico-ex.org/insight/',
                         {'tx': 'tx/', 'addr': 'address/'}),
-    'mona.chainseeker.info': ('https://mona.chainseeker.info/',
+    'dongri.chainseeker.info': ('https://dongri.chainseeker.info/',
                         {'tx': 'tx/', 'addr': 'addr/'}),
 }
 
 testnet_block_explorers = {
-    'insight.monaco-ex.org': ('https://testnet-mona.insight.monaco-ex.org/insight/',
+    'insight.dongrico-ex.org': ('https://testnet-dongri.insight.dongrico-ex.org/insight/',
                         {'tx': 'tx/', 'addr': 'address/'}),
     'system default': ('blockchain:',
                        {'tx': 'tx/', 'addr': 'address/'}),
@@ -573,7 +573,7 @@ def block_explorer_info():
     return testnet_block_explorers if constants.net.TESTNET else mainnet_block_explorers
 
 def block_explorer(config):
-    return config.get('block_explorer', 'insight.monaco-ex.org')
+    return config.get('block_explorer', 'insight.dongrico-ex.org')
 
 def block_explorer_tuple(config):
     return block_explorer_info().get(block_explorer(config))
@@ -598,12 +598,12 @@ def parse_URI(uri, on_pr=None):
 
     if ':' not in uri:
         if not bitcoin.is_address(uri):
-            raise Exception("Not a monacoin address")
+            raise Exception("Not a dongri address")
         return {'address': uri}
 
     u = urllib.parse.urlparse(uri)
-    if u.scheme != 'monacoin':
-        raise Exception("Not a monacoin URI")
+    if u.scheme != 'dongri':
+        raise Exception("Not a dongri URI")
     address = u.path
 
     # python for android fails to parse query
@@ -620,7 +620,7 @@ def parse_URI(uri, on_pr=None):
     out = {k: v[0] for k, v in pq.items()}
     if address:
         if not bitcoin.is_address(address):
-            raise Exception("Invalid monacoin address:" + address)
+            raise Exception("Invalid dongri address:" + address)
         out['address'] = address
     if 'amount' in out:
         am = out['amount']
@@ -670,7 +670,7 @@ def create_URI(addr, amount, message):
         query.append('amount=%s'%format_satoshis_plain(amount))
     if message:
         query.append('message=%s'%urllib.parse.quote(message))
-    p = urllib.parse.ParseResult(scheme='monacoin', netloc='', path=addr, params='', query='&'.join(query), fragment='')
+    p = urllib.parse.ParseResult(scheme='dongri', netloc='', path=addr, params='', query='&'.join(query), fragment='')
     return urllib.parse.urlunparse(p)
 
 
