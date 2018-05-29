@@ -43,7 +43,7 @@ class BitcoinMainnet:
     WIF_PREFIX = 0xB0
     WIF_PREFIX_OLD = 0xB2
     ADDRTYPE_P2PKH = 31
-    ADDRTYPE_P2SH = 29
+    ADDRTYPE_P2SH = 90
     ADDRTYPE_P2SH_ALT = 5
     SEGWIT_HRP = "dongri"
     GENESIS = "039bcb0e9c9540be6dc0e62b9eb6dfa838293a78d16f097b86415e4a932e90ec"
